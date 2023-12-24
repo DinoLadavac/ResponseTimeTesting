@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h2>Books</h2>
+<form action="{% url 'main:book_list' %}" method="get">
+    <!--{% csrf_token %}-->
+        {{ form.as_p }}
+        <button type="submit">Filter</button>
+    </form>
+{% for book in book_list %}
+    <div class="book">
+        <h4>{{ book.title }}</h4>
+        <p>Author: <a href="../author/{{book.author}}"> {{book.author}}</a></p>
+        <p>{{ book.abstract }}</p>
+        <p>Published by: <a href="../pub/{{book.publisher}}"> {{ book.publisher}}</a></p>
+    </div>
+{% endfor %}
+{% endblock %}

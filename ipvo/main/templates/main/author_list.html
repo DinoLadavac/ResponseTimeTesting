@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h2>Authors</h2>
+{% for author in author_list %}
+    <div class="author">
+        <h4>{{author.name}}</h4>
+        <p>City: {{author.city}}</p>
+        <p>Country: {{author.country}}</p>
+        <p><a href="../author/{{author.name}}"> All books by {{author.name}}</a></p>
+    </div>
+{% endfor %}
+{% endblock %}

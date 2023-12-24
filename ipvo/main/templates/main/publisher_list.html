@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <h2>Publishers</h2>
+    <ul>
+        {% for publisher in publisher_list %}
+            <li>
+                Name: {{ publisher.name }}<br>
+                City: {{ publisher.city }}<br>
+                <a href="../pub/{{publisher.name}}"> All books by {{publisher.name}}</a></p>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

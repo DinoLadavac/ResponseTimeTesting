@@ -1,0 +1,85 @@
+version: '3'
+
+services:
+  django:
+    build: .
+    ports:
+      - "8000:8080"
+  django2:
+    build: .
+    ports:
+      - "8001:8080"
+  django3:
+    build: .
+    ports:
+      - "8002:8080" 
+  django4:
+    build: .
+    ports:
+      - "8003:8080"
+  django5:
+    build: .
+    ports:
+      - "8004:8080"
+  django6:
+    build: .
+    ports:
+      - "8005:8080" 
+  django7:
+    build: .
+    ports:
+      - "8006:8080"
+  django8:
+    build: .
+    ports:
+      - "8007:8080"
+  django9:
+    build: .
+    ports:
+      - "8008:8080" 
+  django10:
+    build: .
+    ports:
+      - "8009:8080"
+  django11:
+    build: .
+    ports:
+      - "8010:8080"
+  django12:
+    build: .
+    ports:
+      - "8011:8080" 
+  django13:
+    build: .
+    ports:
+      - "8012:8080"
+  django14:
+    build: .
+    ports:
+      - "8013:8080"
+  django15:
+    build: .
+    ports:
+      - "8014:8080"
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - django
+      - django2
+      - django3
+      - django4
+      - django5
+      - django6
+      - django7
+      - django8
+      - django9
+      - django10
+      - django11
+      - django12
+      - django13
+      - django14
+      - django15
